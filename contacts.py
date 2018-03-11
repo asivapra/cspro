@@ -40,7 +40,7 @@ message = "%s<br><b>Phone:</b> %s" % (message,User_phone)
 server = EmailConnection(mail_server, email, password)
 email = Email(from_='"%s" <%s>' % (name, email), #you can pass only email
               to='"%s" <%s>' % (to_name, to_email), #you can pass only email
-              subject=subject, 
+              subject=subject,  
               message=message, 
               attachments=['/var/www/vhosts/webgenie.com/httpdocs/AI-Genie/p7.png'])
 server.send(email)
