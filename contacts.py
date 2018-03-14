@@ -51,9 +51,9 @@ def uploadfile(form):
 	
 		# strip leading path from file name to avoid directory traversal attacks
 		fn = os.path.basename(fileitem.filename)
-		
+#		print (fn); return		
 		# Internet Explorer will attempt to provide full path for filename fix
-		fn = fn.split('\\')[-1]
+#		fn = fn.split('\\')[-1]
 		
 		# This path must be writable by the web server in order to upload the file.
 		path = '/tmp/'
@@ -101,7 +101,7 @@ def mailit(name,email,phone,message_text,filepath):
 #-------------------------------------------------------------------------------
 def main():	
 	form = cgi.FieldStorage() 
-	recaptcha  = form.getvalue('g-recaptcha-response')
+	recaptcha  = form.getvalue('g-recaptcha-response');  recaptcha = 1
 	if recaptcha:
 		filepath = uploadfile(form);
 		# Get data from fields
